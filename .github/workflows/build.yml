@@ -1,0 +1,30 @@
+name: Build Heaven Step
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 소스 코드 가져오기
+        uses: actions/checkout@v4
+
+      - name: Java 21 설치
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Gradle 설정 (wrapper 없이도 동작)
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: 모드 빌드
+        run: gradle build
+
+      - name: 빌드 결과물(jar) 업로드
+        uses: actions/upload-artifact@v4
+        with:
+          name: heavenstep-mod-jar
+          path: build/libs/*.jar
