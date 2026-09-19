@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "heavenstep",
+  "version": "${version}",
+  "name": "Heaven Step",
+  "description": "Q를 누르면 바라보는 지점에 번개가 내리쳐 주변 대상에게 피해를 입히는 모드입니다.",
+  "authors": [
+    "You"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.heavenstep.HeavenStep"
+    ],
+    "client": [
+      "com.heavenstep.HeavenStepClient"
+    ]
+  },
+  "mixins": [],
+  "depends": {
+    "fabricloader": ">=0.16.9",
+    "minecraft": "~1.21.5",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
